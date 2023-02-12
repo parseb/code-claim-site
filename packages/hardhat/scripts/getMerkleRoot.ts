@@ -46,15 +46,15 @@ async function main() {
   //fs.writeFileSync('data/airdrop.json', JSON.stringify(airdrop));
 
   // Add localhost addresses for testing
-  const testAccounts = await getUnnamedAccounts();
-  if (process.env.HARDHAT_NETWORK === 'localhost') {
-    airdrop[ethers.utils.getAddress(testAccounts[0])] = TOKEN_AMOUNT_NFT;
-    airdrop[ethers.utils.getAddress(testAccounts[1])] = TOKEN_AMOUNT_NFT + TOKEN_AMOUNT_VOTES_POAP;
+  // const testAccounts = await getUnnamedAccounts();
+  // if (process.env.HARDHAT_NETWORK === 'localhost') {
+  //   airdrop[ethers.utils.getAddress(testAccounts[0])] = TOKEN_AMOUNT_NFT;
+  //   airdrop[ethers.utils.getAddress(testAccounts[1])] = TOKEN_AMOUNT_NFT + TOKEN_AMOUNT_VOTES_POAP;
 
-    console.warn('Added test account allocations for:');
-    console.warn(testAccounts[0], airdrop[ethers.utils.getAddress(testAccounts[0])]);
-    console.warn(testAccounts[1], airdrop[ethers.utils.getAddress(testAccounts[1])]);
-  }
+  //   console.warn('Added test account allocations for:');
+  //   console.warn(testAccounts[0], airdrop[ethers.utils.getAddress(testAccounts[0])]);
+  //   console.warn(testAccounts[1], airdrop[ethers.utils.getAddress(testAccounts[1])]);
+  // }
 
   // Write the input airdrop to file, to use it exactly like this in the UI
   fs.writeFileSync(`data/out/airdrop_${process.env.HARDHAT_NETWORK}.json`, JSON.stringify({ airdrop }));
@@ -66,7 +66,7 @@ async function main() {
   console.info(`Generated Merkle root: ${merkleRoot}`);
 
   const numTokens: string = ethers.utils.parseUnits(TOKEN_AMOUNT_NFT.toString(), TOKEN_DECIMALS).toString();
-  const leaf: Buffer = generateLeaf(ethers.utils.getAddress(testAccounts[0]), numTokens);
+  const leaf: Buffer = generateLeaf(ethers.utils.getAddress("0xE7b30A037F5598E4e73702ca66A59Af5CC650Dcd"), numTokens);
   const proof: string[] = merkleTree.getHexProof(leaf);
   console.warn(proof);
 

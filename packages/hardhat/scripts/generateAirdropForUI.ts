@@ -49,19 +49,19 @@ async function main() {
   });
 
   // Add localhost addresses for testing
-  if (process.env.HARDHAT_NETWORK === 'localhost') {
-    const testAccounts = await getUnnamedAccounts();
-    airdropForUI[ethers.utils.getAddress(testAccounts[0])] = { nft: TOKEN_AMOUNT_NFT, voter: 0, earlyContrib: 0 };
-    airdropForUI[ethers.utils.getAddress(testAccounts[1])] = {
-      nft: TOKEN_AMOUNT_NFT,
-      voter: TOKEN_AMOUNT_VOTES_POAP,
-      earlyContrib: 0,
-    };
+  // if (process.env.HARDHAT_NETWORK === 'localhost') {
+  //   const testAccounts = await getUnnamedAccounts();
+  //   airdropForUI[ethers.utils.getAddress(testAccounts[0])] = { nft: TOKEN_AMOUNT_NFT, voter: 0, earlyContrib: 0 };
+  //   airdropForUI[ethers.utils.getAddress(testAccounts[1])] = {
+  //     nft: TOKEN_AMOUNT_NFT,
+  //     voter: TOKEN_AMOUNT_VOTES_POAP,
+  //     earlyContrib: 0,
+  //   };
 
-    console.warn('Added test account allocations for:');
-    console.warn(testAccounts[0], airdropForUI[ethers.utils.getAddress(testAccounts[0])]);
-    console.warn(testAccounts[1], airdropForUI[ethers.utils.getAddress(testAccounts[1])]);
-  }
+  //   console.warn('Added test account allocations for:');
+  //   console.warn(testAccounts[0], airdropForUI[ethers.utils.getAddress(testAccounts[0])]);
+  //   console.warn(testAccounts[1], airdropForUI[ethers.utils.getAddress(testAccounts[1])]);
+  // }
 
   // Write the JSON to file, to be copied to the UI
   fs.writeFileSync(
