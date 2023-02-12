@@ -220,7 +220,7 @@ export class AccessControl__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider,
+    signerOrProvider: Signer | Provider
   ): AccessControl {
     return new Contract(address, _abi, signerOrProvider) as AccessControl;
   }

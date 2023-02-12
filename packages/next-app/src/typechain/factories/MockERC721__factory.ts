@@ -417,12 +417,12 @@ export class MockERC721__factory extends ContractFactory {
   }
 
   deploy(
-    overrides?: Overrides & { from?: string | Promise<string> },
+    overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<MockERC721> {
     return super.deploy(overrides || {}) as Promise<MockERC721>;
   }
   getDeployTransaction(
-    overrides?: Overrides & { from?: string | Promise<string> },
+    overrides?: Overrides & { from?: string | Promise<string> }
   ): TransactionRequest {
     return super.getDeployTransaction(overrides || {});
   }
@@ -439,7 +439,7 @@ export class MockERC721__factory extends ContractFactory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider,
+    signerOrProvider: Signer | Provider
   ): MockERC721 {
     return new Contract(address, _abi, signerOrProvider) as MockERC721;
   }

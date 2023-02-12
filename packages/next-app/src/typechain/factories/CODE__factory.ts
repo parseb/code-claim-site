@@ -982,13 +982,13 @@ export class CODE__factory extends ContractFactory {
 
   deploy(
     _treasury: string,
-    overrides?: Overrides & { from?: string | Promise<string> },
+    overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<CODE> {
     return super.deploy(_treasury, overrides || {}) as Promise<CODE>;
   }
   getDeployTransaction(
     _treasury: string,
-    overrides?: Overrides & { from?: string | Promise<string> },
+    overrides?: Overrides & { from?: string | Promise<string> }
   ): TransactionRequest {
     return super.getDeployTransaction(_treasury, overrides || {});
   }

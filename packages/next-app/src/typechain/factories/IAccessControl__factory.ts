@@ -191,7 +191,7 @@ export class IAccessControl__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider,
+    signerOrProvider: Signer | Provider
   ): IAccessControl {
     return new Contract(address, _abi, signerOrProvider) as IAccessControl;
   }

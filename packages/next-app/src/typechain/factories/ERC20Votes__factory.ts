@@ -598,7 +598,7 @@ export class ERC20Votes__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider,
+    signerOrProvider: Signer | Provider
   ): ERC20Votes {
     return new Contract(address, _abi, signerOrProvider) as ERC20Votes;
   }

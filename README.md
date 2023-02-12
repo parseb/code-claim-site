@@ -82,7 +82,7 @@ To run this project in Gitpod, follow these steps:
 1. Click this link to deploy to gitpod
    <br/>
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/Developer-DAO/code-claim-site)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/parseb/code-claim-site)
 
 2. Import the RPC address given to you by GitPod into your MetaMask wallet
 

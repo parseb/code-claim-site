@@ -6,7 +6,7 @@ const airdropSumPath = args[0];
 
 if (!airdropSumPath) throw new Error('Missing airdropSumPath as first argument!');
 
-const EXPECTED_SUM = 3_500_000;
+const EXPECTED_SUM = 10_000_000;
 
 async function main() {
   const airdropData = JSON.parse(fs.readFileSync(airdropSumPath).toString());
